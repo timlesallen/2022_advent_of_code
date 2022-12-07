@@ -40,15 +40,13 @@ function parseMoveLine (line) {
 
 function applyMove (move, stacks) {
   const { amount, from, to } = move
-  let counter = amount
   console.log('applyMove()', amount, from, to)
-  while (counter-- > 0) {
-    const taken = stacks[from - 1].pop()
-    const onto = stacks[to - 1]
-    onto.push(taken)
-  }
+  const fromColumn = stacks[from - 1]
+  const taken = fromColumn.splice(fromColumn.length - amount, amount)
+  const onto = stacks[to - 1]
+  onto.splice(onto.length, 0, ...taken)
 
-  console.log(move, stacks)
+  console.log({ move, taken, onto, stacks })
 }
 
 async function main () {
