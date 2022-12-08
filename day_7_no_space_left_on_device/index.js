@@ -60,9 +60,16 @@ async function main () {
     }
     console.log(root)
 
-    // now need to sum dir sizes with size > 100000
+    // now need to sum dir sizes with size > 100000 (part 1)
     console.log(select(root, node => node.size <= 100000))
     console.log(select(root, node => node.size <= 100000).reduce((acc, node) => acc + node.size, 0))
+
+    // part 2 - smallest dir that will free enough space for update to run.
+    const FS_SIZE = 70000000
+    const UPDATE_SIZE = 30000000
+    const freeSpace = FS_SIZE - root.size
+    const requiredSpaceFreed = UPDATE_SIZE - freeSpace
+    console.log('min over required size', Math.min(...select(root, node => node.size >= requiredSpaceFreed).map(node => node.size)))
   }
 }
 
