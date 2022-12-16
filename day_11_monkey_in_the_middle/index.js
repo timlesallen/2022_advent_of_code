@@ -1,6 +1,9 @@
 const { createReadStream } = require('fs')
 const readline = require('readline')
 const debug = require('debug')('main')
+const Big = require('big.js')
+
+Big.strict = true
 
 const regexes = {
   monkeyLine: /Monkey\s(\d+):/,
@@ -32,39 +35,49 @@ function parseLine (line) {
   switch (key) {
     case 'monkeyLine': monkies.push(monkey())
       break
-    case 'itemsLine': current.items = operand.split(',').map(x => parseInt(x))
+    case 'itemsLine': current.items = operand.split(',').map(s => s.trim()).map(x => new Big(x))
       break
     case 'operationLine': current.operation = operand
       break
-    case 'testLine': current.test = parseInt(operand)
+    case 'testLine': current.test = operand
       break
-    case 'ifTrueLine': current.ifTrue = parseInt(operand)
+    case 'ifTrueLine': current.ifTrue = operand
       break
-    case 'ifFalseLine': current.ifFalse = parseInt(operand)
+    case 'ifFalseLine': current.ifFalse = operand
   }
+}
+
+const toBigOp = op => {
+  if (op === '-') return 'minus'
+  if (op === '+') return 'plus'
+  if (op === '*') return 'times'
+  if (op === '/') return 'div'
 }
 
 function applyOperation (operation, worryLevel) {
   const old = worryLevel // eslint-disable-line no-unused-vars
-  return eval(operation.replace('new =', '')) // eslint-disable-line no-eval
+  debug({ operation })
+  const [, lhs, op, rhs] = operation.match(/new = (\d+|old) ([+\-*/]) (\d+|old)/)
+  return (lhs === 'old' ? old : new Big(lhs))[toBigOp(op)](rhs === 'old' ? old : new Big(rhs))
 }
 
 function calculate (monkies) {
   for (const monkey of monkies) {
     for (const worryLevel of monkey.items) {
       monkey.inspected++
-      const newWorryLevel = Math.floor(applyOperation(monkey.operation, worryLevel) / 3)
-      const toMonkey = newWorryLevel % monkey.test === 0
+      const newWorryLevel = applyOperation(monkey.operation, worryLevel).div('3').round(0, Big.roundDown)
+      const toMonkey = newWorryLevel.mod(monkey.test).eq('0')
         ? monkey.ifTrue
         : monkey.ifFalse
       monkies[toMonkey].items.push(newWorryLevel)
-      debug(monkies.map(m => ({ i: m.items })))
-      debug(`${worryLevel}=>${newWorryLevel}(${toMonkey})`)
+      debug(monkies.map(m => ({ i: m.items.map(n => n.toString()) })))
+      debug(`${worryLevel.toString()}=>${newWorryLevel.toString()}(${toMonkey})`)
     }
     monkey.items = []
   }
 }
 
+const NUM_ROUNDS = 10000
 async function main () {
   const stream = createReadStream('./input.txt')
 
@@ -77,7 +90,8 @@ async function main () {
     parseLine(line)
   }
 
-  for (let i = 0; i < 20; i++) {
+  for (let i = 0; i < NUM_ROUNDS; i++) {
+    console.log(i)
     calculate(monkies)
   }
   const sorted = monkies.slice().sort((a, b) => b.inspected - a.inspected) // descending order
