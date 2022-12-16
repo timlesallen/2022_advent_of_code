@@ -1,0 +1,685 @@
+2022-12-16T01:21:52.069Z main {
+  regex: 'monkeyLine',
+  operand: '0',
+  line: 'Monkey 0:',
+  current: undefined
+}
+2022-12-16T01:21:52.070Z main { monkies: [ {} ], current: undefined }
+2022-12-16T01:21:52.070Z main { monkies: [ {} ], current: {} }
+2022-12-16T01:21:52.070Z main {
+  regex: 'operationLine',
+  operand: 'new = old * 3',
+  line: '  Operation: new = old * 3',
+  current: {}
+}
+2022-12-16T01:21:52.070Z main {
+  monkies: [ { operation: 'new = old * 3' } ],
+  current: { operation: 'new = old * 3' }
+}
+2022-12-16T01:21:52.070Z main {
+  monkies: [ { operation: 'new = old * 3' } ],
+  current: { operation: 'new = old * 3' }
+}
+2022-12-16T01:21:52.071Z main {
+  regex: 'ifTrueLine',
+  operand: '6',
+  line: '    If true: throw to monkey 6',
+  current: { operation: 'new = old * 3' }
+}
+2022-12-16T01:21:52.071Z main {
+  monkies: [ { operation: 'new = old * 3', ifTrueLine: 6 } ],
+  current: { operation: 'new = old * 3', ifTrueLine: 6 }
+}
+2022-12-16T01:21:52.071Z main {
+  regex: 'ifFalseLine',
+  operand: '2',
+  line: '    If false: throw to monkey 2',
+  current: { operation: 'new = old * 3', ifTrueLine: 6 }
+}
+2022-12-16T01:21:52.071Z main {
+  monkies: [ { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 } ],
+  current: { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 }
+}
+2022-12-16T01:21:52.071Z main {
+  monkies: [ { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 } ],
+  current: { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 }
+}
+2022-12-16T01:21:52.071Z main {
+  regex: 'monkeyLine',
+  operand: '1',
+  line: 'Monkey 1:',
+  current: { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 }
+}
+2022-12-16T01:21:52.071Z main {
+  monkies: [ { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 }, {} ],
+  current: { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 }
+}
+2022-12-16T01:21:52.071Z main {
+  monkies: [ { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 }, {} ],
+  current: {}
+}
+2022-12-16T01:21:52.071Z main {
+  regex: 'operationLine',
+  operand: 'new = old + 1',
+  line: '  Operation: new = old + 1',
+  current: {}
+}
+2022-12-16T01:21:52.071Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1' }
+  ],
+  current: { operation: 'new = old + 1' }
+}
+2022-12-16T01:21:52.071Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1' }
+  ],
+  current: { operation: 'new = old + 1' }
+}
+2022-12-16T01:21:52.072Z main {
+  regex: 'ifTrueLine',
+  operand: '7',
+  line: '    If true: throw to monkey 7',
+  current: { operation: 'new = old + 1' }
+}
+2022-12-16T01:21:52.072Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7 }
+  ],
+  current: { operation: 'new = old + 1', ifTrueLine: 7 }
+}
+2022-12-16T01:21:52.072Z main {
+  regex: 'ifFalseLine',
+  operand: '4',
+  line: '    If false: throw to monkey 4',
+  current: { operation: 'new = old + 1', ifTrueLine: 7 }
+}
+2022-12-16T01:21:52.072Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 }
+  ],
+  current: { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 }
+}
+2022-12-16T01:21:52.072Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 }
+  ],
+  current: { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 }
+}
+2022-12-16T01:21:52.072Z main {
+  regex: 'monkeyLine',
+  operand: '2',
+  line: 'Monkey 2:',
+  current: { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 }
+}
+2022-12-16T01:21:52.072Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    {}
+  ],
+  current: { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 }
+}
+2022-12-16T01:21:52.072Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    {}
+  ],
+  current: {}
+}
+2022-12-16T01:21:52.072Z main {
+  regex: 'operationLine',
+  operand: 'new = old * 13',
+  line: '  Operation: new = old * 13',
+  current: {}
+}
+2022-12-16T01:21:52.072Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    { operation: 'new = old * 13' }
+  ],
+  current: { operation: 'new = old * 13' }
+}
+2022-12-16T01:21:52.072Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    { operation: 'new = old * 13' }
+  ],
+  current: { operation: 'new = old * 13' }
+}
+2022-12-16T01:21:52.072Z main {
+  regex: 'ifTrueLine',
+  operand: '1',
+  line: '    If true: throw to monkey 1',
+  current: { operation: 'new = old * 13' }
+}
+2022-12-16T01:21:52.072Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    { operation: 'new = old * 13', ifTrueLine: 1 }
+  ],
+  current: { operation: 'new = old * 13', ifTrueLine: 1 }
+}
+2022-12-16T01:21:52.073Z main {
+  regex: 'ifFalseLine',
+  operand: '4',
+  line: '    If false: throw to monkey 4',
+  current: { operation: 'new = old * 13', ifTrueLine: 1 }
+}
+2022-12-16T01:21:52.073Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    { operation: 'new = old * 13', ifTrueLine: 1, ifFalseLine: 4 }
+  ],
+  current: { operation: 'new = old * 13', ifTrueLine: 1, ifFalseLine: 4 }
+}
+2022-12-16T01:21:52.073Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    { operation: 'new = old * 13', ifTrueLine: 1, ifFalseLine: 4 }
+  ],
+  current: { operation: 'new = old * 13', ifTrueLine: 1, ifFalseLine: 4 }
+}
+2022-12-16T01:21:52.073Z main {
+  regex: 'monkeyLine',
+  operand: '3',
+  line: 'Monkey 3:',
+  current: { operation: 'new = old * 13', ifTrueLine: 1, ifFalseLine: 4 }
+}
+2022-12-16T01:21:52.073Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    { operation: 'new = old * 13', ifTrueLine: 1, ifFalseLine: 4 },
+    {}
+  ],
+  current: { operation: 'new = old * 13', ifTrueLine: 1, ifFalseLine: 4 }
+}
+2022-12-16T01:21:52.073Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    { operation: 'new = old * 13', ifTrueLine: 1, ifFalseLine: 4 },
+    {}
+  ],
+  current: {}
+}
+2022-12-16T01:21:52.073Z main {
+  regex: 'operationLine',
+  operand: 'new = old * old',
+  line: '  Operation: new = old * old',
+  current: {}
+}
+2022-12-16T01:21:52.073Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    { operation: 'new = old * 13', ifTrueLine: 1, ifFalseLine: 4 },
+    { operation: 'new = old * old' }
+  ],
+  current: { operation: 'new = old * old' }
+}
+2022-12-16T01:21:52.073Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    { operation: 'new = old * 13', ifTrueLine: 1, ifFalseLine: 4 },
+    { operation: 'new = old * old' }
+  ],
+  current: { operation: 'new = old * old' }
+}
+2022-12-16T01:21:52.073Z main {
+  regex: 'ifTrueLine',
+  operand: '6',
+  line: '    If true: throw to monkey 6',
+  current: { operation: 'new = old * old' }
+}
+2022-12-16T01:21:52.073Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    { operation: 'new = old * 13', ifTrueLine: 1, ifFalseLine: 4 },
+    { operation: 'new = old * old', ifTrueLine: 6 }
+  ],
+  current: { operation: 'new = old * old', ifTrueLine: 6 }
+}
+2022-12-16T01:21:52.073Z main {
+  regex: 'ifFalseLine',
+  operand: '0',
+  line: '    If false: throw to monkey 0',
+  current: { operation: 'new = old * old', ifTrueLine: 6 }
+}
+2022-12-16T01:21:52.073Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    { operation: 'new = old * 13', ifTrueLine: 1, ifFalseLine: 4 },
+    { operation: 'new = old * old', ifTrueLine: 6, ifFalseLine: 0 }
+  ],
+  current: { operation: 'new = old * old', ifTrueLine: 6, ifFalseLine: 0 }
+}
+2022-12-16T01:21:52.074Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    { operation: 'new = old * 13', ifTrueLine: 1, ifFalseLine: 4 },
+    { operation: 'new = old * old', ifTrueLine: 6, ifFalseLine: 0 }
+  ],
+  current: { operation: 'new = old * old', ifTrueLine: 6, ifFalseLine: 0 }
+}
+2022-12-16T01:21:52.074Z main {
+  regex: 'monkeyLine',
+  operand: '4',
+  line: 'Monkey 4:',
+  current: { operation: 'new = old * old', ifTrueLine: 6, ifFalseLine: 0 }
+}
+2022-12-16T01:21:52.074Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    { operation: 'new = old * 13', ifTrueLine: 1, ifFalseLine: 4 },
+    { operation: 'new = old * old', ifTrueLine: 6, ifFalseLine: 0 },
+    {}
+  ],
+  current: { operation: 'new = old * old', ifTrueLine: 6, ifFalseLine: 0 }
+}
+2022-12-16T01:21:52.074Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    { operation: 'new = old * 13', ifTrueLine: 1, ifFalseLine: 4 },
+    { operation: 'new = old * old', ifTrueLine: 6, ifFalseLine: 0 },
+    {}
+  ],
+  current: {}
+}
+2022-12-16T01:21:52.074Z main {
+  regex: 'operationLine',
+  operand: 'new = old + 7',
+  line: '  Operation: new = old + 7',
+  current: {}
+}
+2022-12-16T01:21:52.074Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    { operation: 'new = old * 13', ifTrueLine: 1, ifFalseLine: 4 },
+    { operation: 'new = old * old', ifTrueLine: 6, ifFalseLine: 0 },
+    { operation: 'new = old + 7' }
+  ],
+  current: { operation: 'new = old + 7' }
+}
+2022-12-16T01:21:52.074Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    { operation: 'new = old * 13', ifTrueLine: 1, ifFalseLine: 4 },
+    { operation: 'new = old * old', ifTrueLine: 6, ifFalseLine: 0 },
+    { operation: 'new = old + 7' }
+  ],
+  current: { operation: 'new = old + 7' }
+}
+2022-12-16T01:21:52.074Z main {
+  regex: 'ifTrueLine',
+  operand: '5',
+  line: '    If true: throw to monkey 5',
+  current: { operation: 'new = old + 7' }
+}
+2022-12-16T01:21:52.074Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    { operation: 'new = old * 13', ifTrueLine: 1, ifFalseLine: 4 },
+    { operation: 'new = old * old', ifTrueLine: 6, ifFalseLine: 0 },
+    { operation: 'new = old + 7', ifTrueLine: 5 }
+  ],
+  current: { operation: 'new = old + 7', ifTrueLine: 5 }
+}
+2022-12-16T01:21:52.074Z main {
+  regex: 'ifFalseLine',
+  operand: '7',
+  line: '    If false: throw to monkey 7',
+  current: { operation: 'new = old + 7', ifTrueLine: 5 }
+}
+2022-12-16T01:21:52.074Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    { operation: 'new = old * 13', ifTrueLine: 1, ifFalseLine: 4 },
+    { operation: 'new = old * old', ifTrueLine: 6, ifFalseLine: 0 },
+    { operation: 'new = old + 7', ifTrueLine: 5, ifFalseLine: 7 }
+  ],
+  current: { operation: 'new = old + 7', ifTrueLine: 5, ifFalseLine: 7 }
+}
+2022-12-16T01:21:52.074Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    { operation: 'new = old * 13', ifTrueLine: 1, ifFalseLine: 4 },
+    { operation: 'new = old * old', ifTrueLine: 6, ifFalseLine: 0 },
+    { operation: 'new = old + 7', ifTrueLine: 5, ifFalseLine: 7 }
+  ],
+  current: { operation: 'new = old + 7', ifTrueLine: 5, ifFalseLine: 7 }
+}
+2022-12-16T01:21:52.074Z main {
+  regex: 'monkeyLine',
+  operand: '5',
+  line: 'Monkey 5:',
+  current: { operation: 'new = old + 7', ifTrueLine: 5, ifFalseLine: 7 }
+}
+2022-12-16T01:21:52.075Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    { operation: 'new = old * 13', ifTrueLine: 1, ifFalseLine: 4 },
+    { operation: 'new = old * old', ifTrueLine: 6, ifFalseLine: 0 },
+    { operation: 'new = old + 7', ifTrueLine: 5, ifFalseLine: 7 },
+    {}
+  ],
+  current: { operation: 'new = old + 7', ifTrueLine: 5, ifFalseLine: 7 }
+}
+2022-12-16T01:21:52.075Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    { operation: 'new = old * 13', ifTrueLine: 1, ifFalseLine: 4 },
+    { operation: 'new = old * old', ifTrueLine: 6, ifFalseLine: 0 },
+    { operation: 'new = old + 7', ifTrueLine: 5, ifFalseLine: 7 },
+    {}
+  ],
+  current: {}
+}
+2022-12-16T01:21:52.075Z main {
+  regex: 'operationLine',
+  operand: 'new = old + 8',
+  line: '  Operation: new = old + 8',
+  current: {}
+}
+2022-12-16T01:21:52.075Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    { operation: 'new = old * 13', ifTrueLine: 1, ifFalseLine: 4 },
+    { operation: 'new = old * old', ifTrueLine: 6, ifFalseLine: 0 },
+    { operation: 'new = old + 7', ifTrueLine: 5, ifFalseLine: 7 },
+    { operation: 'new = old + 8' }
+  ],
+  current: { operation: 'new = old + 8' }
+}
+2022-12-16T01:21:52.075Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    { operation: 'new = old * 13', ifTrueLine: 1, ifFalseLine: 4 },
+    { operation: 'new = old * old', ifTrueLine: 6, ifFalseLine: 0 },
+    { operation: 'new = old + 7', ifTrueLine: 5, ifFalseLine: 7 },
+    { operation: 'new = old + 8' }
+  ],
+  current: { operation: 'new = old + 8' }
+}
+2022-12-16T01:21:52.075Z main {
+  regex: 'ifTrueLine',
+  operand: '3',
+  line: '    If true: throw to monkey 3',
+  current: { operation: 'new = old + 8' }
+}
+2022-12-16T01:21:52.075Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    { operation: 'new = old * 13', ifTrueLine: 1, ifFalseLine: 4 },
+    { operation: 'new = old * old', ifTrueLine: 6, ifFalseLine: 0 },
+    { operation: 'new = old + 7', ifTrueLine: 5, ifFalseLine: 7 },
+    { operation: 'new = old + 8', ifTrueLine: 3 }
+  ],
+  current: { operation: 'new = old + 8', ifTrueLine: 3 }
+}
+2022-12-16T01:21:52.075Z main {
+  regex: 'ifFalseLine',
+  operand: '0',
+  line: '    If false: throw to monkey 0',
+  current: { operation: 'new = old + 8', ifTrueLine: 3 }
+}
+2022-12-16T01:21:52.075Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    { operation: 'new = old * 13', ifTrueLine: 1, ifFalseLine: 4 },
+    { operation: 'new = old * old', ifTrueLine: 6, ifFalseLine: 0 },
+    { operation: 'new = old + 7', ifTrueLine: 5, ifFalseLine: 7 },
+    { operation: 'new = old + 8', ifTrueLine: 3, ifFalseLine: 0 }
+  ],
+  current: { operation: 'new = old + 8', ifTrueLine: 3, ifFalseLine: 0 }
+}
+2022-12-16T01:21:52.075Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    { operation: 'new = old * 13', ifTrueLine: 1, ifFalseLine: 4 },
+    { operation: 'new = old * old', ifTrueLine: 6, ifFalseLine: 0 },
+    { operation: 'new = old + 7', ifTrueLine: 5, ifFalseLine: 7 },
+    { operation: 'new = old + 8', ifTrueLine: 3, ifFalseLine: 0 }
+  ],
+  current: { operation: 'new = old + 8', ifTrueLine: 3, ifFalseLine: 0 }
+}
+2022-12-16T01:21:52.075Z main {
+  regex: 'monkeyLine',
+  operand: '6',
+  line: 'Monkey 6:',
+  current: { operation: 'new = old + 8', ifTrueLine: 3, ifFalseLine: 0 }
+}
+2022-12-16T01:21:52.076Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    { operation: 'new = old * 13', ifTrueLine: 1, ifFalseLine: 4 },
+    { operation: 'new = old * old', ifTrueLine: 6, ifFalseLine: 0 },
+    { operation: 'new = old + 7', ifTrueLine: 5, ifFalseLine: 7 },
+    { operation: 'new = old + 8', ifTrueLine: 3, ifFalseLine: 0 },
+    {}
+  ],
+  current: { operation: 'new = old + 8', ifTrueLine: 3, ifFalseLine: 0 }
+}
+2022-12-16T01:21:52.076Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    { operation: 'new = old * 13', ifTrueLine: 1, ifFalseLine: 4 },
+    { operation: 'new = old * old', ifTrueLine: 6, ifFalseLine: 0 },
+    { operation: 'new = old + 7', ifTrueLine: 5, ifFalseLine: 7 },
+    { operation: 'new = old + 8', ifTrueLine: 3, ifFalseLine: 0 },
+    {}
+  ],
+  current: {}
+}
+2022-12-16T01:21:52.076Z main {
+  regex: 'operationLine',
+  operand: 'new = old + 4',
+  line: '  Operation: new = old + 4',
+  current: {}
+}
+2022-12-16T01:21:52.076Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    { operation: 'new = old * 13', ifTrueLine: 1, ifFalseLine: 4 },
+    { operation: 'new = old * old', ifTrueLine: 6, ifFalseLine: 0 },
+    { operation: 'new = old + 7', ifTrueLine: 5, ifFalseLine: 7 },
+    { operation: 'new = old + 8', ifTrueLine: 3, ifFalseLine: 0 },
+    { operation: 'new = old + 4' }
+  ],
+  current: { operation: 'new = old + 4' }
+}
+2022-12-16T01:21:52.076Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    { operation: 'new = old * 13', ifTrueLine: 1, ifFalseLine: 4 },
+    { operation: 'new = old * old', ifTrueLine: 6, ifFalseLine: 0 },
+    { operation: 'new = old + 7', ifTrueLine: 5, ifFalseLine: 7 },
+    { operation: 'new = old + 8', ifTrueLine: 3, ifFalseLine: 0 },
+    { operation: 'new = old + 4' }
+  ],
+  current: { operation: 'new = old + 4' }
+}
+2022-12-16T01:21:52.076Z main {
+  regex: 'ifTrueLine',
+  operand: '1',
+  line: '    If true: throw to monkey 1',
+  current: { operation: 'new = old + 4' }
+}
+2022-12-16T01:21:52.077Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    { operation: 'new = old * 13', ifTrueLine: 1, ifFalseLine: 4 },
+    { operation: 'new = old * old', ifTrueLine: 6, ifFalseLine: 0 },
+    { operation: 'new = old + 7', ifTrueLine: 5, ifFalseLine: 7 },
+    { operation: 'new = old + 8', ifTrueLine: 3, ifFalseLine: 0 },
+    { operation: 'new = old + 4', ifTrueLine: 1 }
+  ],
+  current: { operation: 'new = old + 4', ifTrueLine: 1 }
+}
+2022-12-16T01:21:52.077Z main {
+  regex: 'ifFalseLine',
+  operand: '2',
+  line: '    If false: throw to monkey 2',
+  current: { operation: 'new = old + 4', ifTrueLine: 1 }
+}
+2022-12-16T01:21:52.077Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    { operation: 'new = old * 13', ifTrueLine: 1, ifFalseLine: 4 },
+    { operation: 'new = old * old', ifTrueLine: 6, ifFalseLine: 0 },
+    { operation: 'new = old + 7', ifTrueLine: 5, ifFalseLine: 7 },
+    { operation: 'new = old + 8', ifTrueLine: 3, ifFalseLine: 0 },
+    { operation: 'new = old + 4', ifTrueLine: 1, ifFalseLine: 2 }
+  ],
+  current: { operation: 'new = old + 4', ifTrueLine: 1, ifFalseLine: 2 }
+}
+2022-12-16T01:21:52.077Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    { operation: 'new = old * 13', ifTrueLine: 1, ifFalseLine: 4 },
+    { operation: 'new = old * old', ifTrueLine: 6, ifFalseLine: 0 },
+    { operation: 'new = old + 7', ifTrueLine: 5, ifFalseLine: 7 },
+    { operation: 'new = old + 8', ifTrueLine: 3, ifFalseLine: 0 },
+    { operation: 'new = old + 4', ifTrueLine: 1, ifFalseLine: 2 }
+  ],
+  current: { operation: 'new = old + 4', ifTrueLine: 1, ifFalseLine: 2 }
+}
+2022-12-16T01:21:52.077Z main {
+  regex: 'monkeyLine',
+  operand: '7',
+  line: 'Monkey 7:',
+  current: { operation: 'new = old + 4', ifTrueLine: 1, ifFalseLine: 2 }
+}
+2022-12-16T01:21:52.078Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    { operation: 'new = old * 13', ifTrueLine: 1, ifFalseLine: 4 },
+    { operation: 'new = old * old', ifTrueLine: 6, ifFalseLine: 0 },
+    { operation: 'new = old + 7', ifTrueLine: 5, ifFalseLine: 7 },
+    { operation: 'new = old + 8', ifTrueLine: 3, ifFalseLine: 0 },
+    { operation: 'new = old + 4', ifTrueLine: 1, ifFalseLine: 2 },
+    {}
+  ],
+  current: { operation: 'new = old + 4', ifTrueLine: 1, ifFalseLine: 2 }
+}
+2022-12-16T01:21:52.078Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    { operation: 'new = old * 13', ifTrueLine: 1, ifFalseLine: 4 },
+    { operation: 'new = old * old', ifTrueLine: 6, ifFalseLine: 0 },
+    { operation: 'new = old + 7', ifTrueLine: 5, ifFalseLine: 7 },
+    { operation: 'new = old + 8', ifTrueLine: 3, ifFalseLine: 0 },
+    { operation: 'new = old + 4', ifTrueLine: 1, ifFalseLine: 2 },
+    {}
+  ],
+  current: {}
+}
+2022-12-16T01:21:52.078Z main {
+  regex: 'operationLine',
+  operand: 'new = old + 5',
+  line: '  Operation: new = old + 5',
+  current: {}
+}
+2022-12-16T01:21:52.078Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    { operation: 'new = old * 13', ifTrueLine: 1, ifFalseLine: 4 },
+    { operation: 'new = old * old', ifTrueLine: 6, ifFalseLine: 0 },
+    { operation: 'new = old + 7', ifTrueLine: 5, ifFalseLine: 7 },
+    { operation: 'new = old + 8', ifTrueLine: 3, ifFalseLine: 0 },
+    { operation: 'new = old + 4', ifTrueLine: 1, ifFalseLine: 2 },
+    { operation: 'new = old + 5' }
+  ],
+  current: { operation: 'new = old + 5' }
+}
+2022-12-16T01:21:52.078Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    { operation: 'new = old * 13', ifTrueLine: 1, ifFalseLine: 4 },
+    { operation: 'new = old * old', ifTrueLine: 6, ifFalseLine: 0 },
+    { operation: 'new = old + 7', ifTrueLine: 5, ifFalseLine: 7 },
+    { operation: 'new = old + 8', ifTrueLine: 3, ifFalseLine: 0 },
+    { operation: 'new = old + 4', ifTrueLine: 1, ifFalseLine: 2 },
+    { operation: 'new = old + 5' }
+  ],
+  current: { operation: 'new = old + 5' }
+}
+2022-12-16T01:21:52.078Z main {
+  regex: 'ifTrueLine',
+  operand: '3',
+  line: '    If true: throw to monkey 3',
+  current: { operation: 'new = old + 5' }
+}
+2022-12-16T01:21:52.078Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    { operation: 'new = old * 13', ifTrueLine: 1, ifFalseLine: 4 },
+    { operation: 'new = old * old', ifTrueLine: 6, ifFalseLine: 0 },
+    { operation: 'new = old + 7', ifTrueLine: 5, ifFalseLine: 7 },
+    { operation: 'new = old + 8', ifTrueLine: 3, ifFalseLine: 0 },
+    { operation: 'new = old + 4', ifTrueLine: 1, ifFalseLine: 2 },
+    { operation: 'new = old + 5', ifTrueLine: 3 }
+  ],
+  current: { operation: 'new = old + 5', ifTrueLine: 3 }
+}
+2022-12-16T01:21:52.078Z main {
+  regex: 'ifFalseLine',
+  operand: '5',
+  line: '    If false: throw to monkey 5',
+  current: { operation: 'new = old + 5', ifTrueLine: 3 }
+}
+2022-12-16T01:21:52.079Z main {
+  monkies: [
+    { operation: 'new = old * 3', ifTrueLine: 6, ifFalseLine: 2 },
+    { operation: 'new = old + 1', ifTrueLine: 7, ifFalseLine: 4 },
+    { operation: 'new = old * 13', ifTrueLine: 1, ifFalseLine: 4 },
+    { operation: 'new = old * old', ifTrueLine: 6, ifFalseLine: 0 },
+    { operation: 'new = old + 7', ifTrueLine: 5, ifFalseLine: 7 },
+    { operation: 'new = old + 8', ifTrueLine: 3, ifFalseLine: 0 },
+    { operation: 'new = old + 4', ifTrueLine: 1, ifFalseLine: 2 },
+    { operation: 'new = old + 5', ifTrueLine: 3, ifFalseLine: 5 }
+  ],
+  current: { operation: 'new = old + 5', ifTrueLine: 3, ifFalseLine: 5 }
+}
