@@ -20,6 +20,14 @@ function monkey () {
   }
 }
 
+function item (monkies, init) {
+  const ret = {}
+  for (const monkey of monkies) {
+    ret[monkey.test] = init.mod(monkey.test)
+  }
+  return ret
+}
+
 function parseLine (line, monkies) {
   if (line === '') return
   const current = monkies[monkies.length - 1]
@@ -64,13 +72,16 @@ function calculate (monkies) {
   for (const monkey of monkies) {
     for (const worryLevel of monkey.items) {
       monkey.inspected++
-      const newWorryLevel = applyOperation(monkey.operation, worryLevel).div('3').round(0, Big.roundDown)
-      const toMonkey = newWorryLevel.mod(monkey.test).eq('0')
+      for (const divisor in worryLevel) {
+        worryLevel[divisor] = applyOperation(monkey.operation, worryLevel[divisor]).mod(divisor)
+      }
+      const toMonkey = worryLevel[monkey.test].mod(monkey.test).eq('0')
         ? monkey.ifTrue
         : monkey.ifFalse
-      monkies[toMonkey].items.push(newWorryLevel)
+      monkies[toMonkey].items.push(worryLevel)
+
       debug(monkies.map(m => ({ i: m.items.map(n => n.toString()) })))
-      debug(`${worryLevel.toString()}=>${newWorryLevel.toString()}(${toMonkey})`)
+      debug(`${worryLevel.toString()}=>${worryLevel}(${toMonkey})`)
     }
     monkey.items = []
   }
@@ -87,13 +98,17 @@ async function main () {
 
   const monkies = await parseMonkies(rl)
 
-  console.log('monkey business: ', monkeyBusiness(monkies, 20))
+  console.log('monkey business: ', monkeyBusiness(monkies, NUM_ROUNDS))
 }
 
 async function parseMonkies (iterator) {
   const monkies = []
   for await (const line of iterator) {
     parseLine(line, monkies)
+  }
+  // post-process items
+  for (const monkey of monkies) {
+    monkey.items = monkey.items.map(value => item(monkies, value))
   }
   return monkies
 }
