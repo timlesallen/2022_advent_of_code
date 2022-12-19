@@ -20,8 +20,7 @@ function monkey () {
   }
 }
 
-const monkies = []
-function parseLine (line) {
+function parseLine (line, monkies) {
   if (line === '') return
   const current = monkies[monkies.length - 1]
   const [key, match] = Object.entries(regexes).reduce((found, [key, regex]) => {
@@ -86,17 +85,30 @@ async function main () {
     crlfDelay: Infinity
   })
 
-  for await (const line of rl) {
-    parseLine(line)
-  }
+  const monkies = await parseMonkies(rl)
 
-  for (let i = 0; i < NUM_ROUNDS; i++) {
-    console.log(i)
+  console.log('monkey business: ', monkeyBusiness(monkies, 20))
+}
+
+async function parseMonkies (iterator) {
+  const monkies = []
+  for await (const line of iterator) {
+    parseLine(line, monkies)
+  }
+  return monkies
+}
+
+function monkeyBusiness (monkies, iterations) {
+  for (let i = 0; i < iterations; i++) {
     calculate(monkies)
   }
   const sorted = monkies.slice().sort((a, b) => b.inspected - a.inspected) // descending order
   const [max1, max2] = sorted
-  console.log('monkey business: ', max1.inspected * max2.inspected)
+  return max1.inspected * max2.inspected
 }
 
-main()
+if (require.main === module) {
+  main()
+} else {
+  module.exports = { monkeyBusiness, parseMonkies }
+}
