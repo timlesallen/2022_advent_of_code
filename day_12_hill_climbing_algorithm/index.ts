@@ -57,7 +57,7 @@ function shortestPath (start, steps): number {
     return shortestPath(next, steps + 1)
   })
   const min = Math.min(...possibles)
-  if (Number.isFinite(min)) console.log({ start, height: node.height, direction: directions[possibles.findIndex(i => i === min)], result: 1 + min})
+  // if (Number.isFinite(min)) console.log({ start, height: node.height, direction: directions[possibles.findIndex(i => i === min)], result: 1 + min})
   return 1 + min
 }
 
@@ -84,7 +84,17 @@ async function main () {
     parseLine(line)
   }
 
-  console.log({ shortestPath: shortestPath(start, 0) })
+  let starts = []
+  for (let row = 0; row < grid.length; row++) {
+    for (let col = 0; col < grid[row].length; col++) {
+      if (['a', 'S'].includes(grid[row][col].height)) {
+        starts.push([row, col])
+      }
+    }
+  }
+  console.log({starts})
+  const shortest = Math.min(...starts.map(start => shortestPath(start, 0)))
+  console.log({ shortest })
 }
 
 if (require.main === module) {
