@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "@types/node": "^18.11.17",
     "chai": "^4.3.7",
     "debug": "^4.3.4",
     "eslint": "^8.29.0",
@@ -8,9 +9,12 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.6.0",
     "eslint-plugin-promise": "^6.1.1",
-    "prettier-eslint-cli": "^7.1.0"
+    "mocha": "^10.2.0",
+    "prettier-eslint-cli": "^7.1.0",
+    "typescript-eslint-parser": "^22.0.0"
   },
   "dependencies": {
-    "big.js": "^6.2.1"
+    "big.js": "^6.2.1",
+    "lodash.zip": "^4.2.0"
   }
 }

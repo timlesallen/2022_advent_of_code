@@ -1,0 +1,13 @@
+{
+  "name": "day_13_distress_signal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.test.js",
+  "scripts": {
+    "build": "tsc --outDir out index.ts",
+    "test": "npm run build && mocha index.test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
