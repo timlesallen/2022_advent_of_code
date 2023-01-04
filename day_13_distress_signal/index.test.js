@@ -1,5 +1,12 @@
 const expect = require("chai").expect;
-const { calculate, correctlyOrdered, givenInput } = require("./out/index");
+const {
+  calculate,
+  calculate_part2,
+  correctlyOrdered,
+  parseInput,
+  parseInputPaired,
+  inputFile,
+} = require("./out/index");
 
 describe("correctlyOrdered", () => {
   it("orders simple case array correctly", () => {
@@ -37,6 +44,11 @@ describe("correctlyOrdered", () => {
     ).to.equal(false);
   });
   it("part 1 answer", async () => {
-    expect(calculate(await givenInput())).to.equal(5003);
+    expect(calculate(await parseInputPaired(inputFile()))).to.equal(5003);
+  });
+  it("part 2 worked example", async () => {
+    expect(
+      calculate_part2(await parseInput(inputFile("./example.txt")))
+    ).to.equal(140);
   });
 });
